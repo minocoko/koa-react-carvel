@@ -1,7 +1,7 @@
 # react-carvel
 A painless react server side rendering middleware
 
-### Features
+## Features
 * stream & string mode rendering
 * gzip compression on stream & string rendering
 * rendering cache
@@ -11,7 +11,7 @@ A painless react server side rendering middleware
 * base on koa
 
 
-### Usage
+## Usage
 
     base on project create by create-react-app & react-router-dom
 
@@ -83,10 +83,10 @@ A painless react server side rendering middleware
 
     now ssr is working
 
-### options
+## options
 
     TBD
 
-### License
+## License
 
-    MIT © [Minocoko](mailto:minocoko@outlook.com)
+  MIT © [Minocoko](mailto:minocoko@outlook.com)
