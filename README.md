@@ -18,7 +18,8 @@ A painless react server side rendering middleware
 
 * install packages
     ```javascript
-    yarn add react-carvel react react-dom react-router-dom koa koa-router koa-static
+    yarn add react-carvel react react-dom react-router-dom \
+    koa koa-router koa-static
     ```
 
 * separate client & server root.js
