@@ -3,6 +3,8 @@ import babel from 'rollup-plugin-babel';
 export default [{
     input: './src/index.js',
     output: {
+        esModule: false,
+        export: 'index',
         file: './dist/index.cjs.js',
         format: 'cjs',
     },
