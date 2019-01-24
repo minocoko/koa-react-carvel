@@ -1,6 +1,6 @@
 {
   "name": "react-carvel",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A painless react server side rendering toolkit",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -9,7 +9,7 @@
     "rollup.config.js"
   ],
   "scripts": {
-    "postinstall": "npm run build",
+    "postinstall": "npm install && npm run build",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "build": "rollup -c",
