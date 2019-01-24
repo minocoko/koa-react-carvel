@@ -15,7 +15,6 @@ A painless react server side rendering middleware
 
     base on project create by create-react-app & react-router-dom
 
-
 * install packages
     ```javascript
     yarn add react-carvel react react-dom react-router-dom \
@@ -25,6 +24,7 @@ A painless react server side rendering middleware
 * separate client & server root.js
 
     use BrowserRouter at client side & use StaticRouter at server side
+    
     root-client.js
     ```javascript
     import React from 'react';

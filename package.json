@@ -1,12 +1,12 @@
 {
   "name": "react-carvel",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A painless react server side rendering toolkit",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "esnext": "dist/index.esm.js",
   "files": [
-    "dist"
+    "rollup.config.js"
   ],
   "scripts": {
     "postinstall": "npm run build",
