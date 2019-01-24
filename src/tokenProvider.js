@@ -4,6 +4,7 @@ export default class TokenProvider {
   }
 
   updateContext(ctx, context) {
+    /* eslint-disable-next-line */
     context.secureKey = ctx.cookies.get(this.secureKey);
   }
 }

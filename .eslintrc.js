@@ -8,6 +8,7 @@ module.exports = {
   ],
   parser: "babel-eslint",
   rules: {
+    "class-methods-use-this": "off",
     "radix": "off",
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',

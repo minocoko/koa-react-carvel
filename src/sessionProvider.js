@@ -4,6 +4,7 @@ export default class SessionProvider {
   }
 
   updateContext(ctx, context) {
+    /* eslint-disable-next-line */
     context.secureKey = ctx.cookies.get(this.secureKey);
   }
 }

@@ -68,7 +68,7 @@ export default class StringRender {
         stream = renderToStream(plugins
           .reduce(
             (element, plugin) => plugin(ReactDOMServer.renderToNodeStream, element),
-                        <Root context={context} />,
+            <Root context={context} />,
           ));
       } else {
         stream = renderToStream(ReactDOMServer
