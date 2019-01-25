@@ -22,7 +22,7 @@ export default function index(config) {
     render,
     plugins,
   } = config;
-  const homeContent = fs.readFileSync(`${buildPath}/${template}`).toString();
+  const homeContent = fs.readFileSync(`${buildPath}/${template || 'index.html'}`).toString();
   const rootElement = `<div id="${rootElementId}">`;
   const indexOfRootElement = homeContent.indexOf(rootElement);
   const firstPartOfHomePageContent = homeContent.substring(0, indexOfRootElement + rootElement.length);
