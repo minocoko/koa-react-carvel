@@ -31,25 +31,29 @@ export default function index(config) {
   /* eslint-disable-next-line */
   const handler = async (ctx, next) => {
     const { url } = ctx.req;
-    const currentRoute = route.routes.find(item => matchPath(url, item));
-    if (!currentRoute) {
-      return next();
-    }
-
-    try {
-      if (cache && route.isCached(currentRoute)) {
-        let content = await cache.get(url);
-        if (content) {
-          render.renderCacheContent(ctx, next, content);
-        } else {
-          content = await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
-          await cache.set(url, content);
-        }
-      } else {
-        await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
+    if (route) {
+      const currentRoute = route.routes.find(item => matchPath(url, item));
+      if (!currentRoute) {
+        return next();
       }
-    } catch (error) {
-      throw error;
+
+      try {
+        if (cache && route.isCached(currentRoute)) {
+          let content = await cache.get(url);
+          if (content) {
+            render.renderCacheContent(ctx, next, content);
+          } else {
+            content = await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
+            await cache.set(url, content);
+          }
+        } else {
+          await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
+        }
+      } catch (error) {
+        throw error;
+      }
+    } else {
+      await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
     }
   };
 
