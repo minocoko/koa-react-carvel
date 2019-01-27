@@ -8,6 +8,7 @@ A painless react server side rendering middleware
 * Styled-component & sass & less
 * Cookie & token base credential
 * Only few change when apply to exists or new react project
+* use exists client routing
 * Base on koa
 
 
