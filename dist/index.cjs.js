@@ -297,7 +297,7 @@ function index(config) {
     render,
     plugins
   } = config;
-  const homeContent = fs.readFileSync(`${buildPath}/${template}`).toString();
+  const homeContent = fs.readFileSync(`${buildPath}/${template || 'index.html'}`).toString();
   const rootElement = `<div id="${rootElementId}">`;
   const indexOfRootElement = homeContent.indexOf(rootElement);
   const firstPartOfHomePageContent = homeContent.substring(0, indexOfRootElement + rootElement.length);
@@ -308,27 +308,32 @@ function index(config) {
     const {
       url
     } = ctx.req;
-    const currentRoute = route.routes.find(item => reactRouterDom.matchPath(url, item));
 
-    if (!currentRoute) {
-      return next();
-    }
+    if (route) {
+      const currentRoute = route.routes.find(item => reactRouterDom.matchPath(url, item));
 
-    try {
-      if (cache && route.isCached(currentRoute)) {
-        let content = await cache.get(url);
-
-        if (content) {
-          render.renderCacheContent(ctx, next, content);
-        } else {
-          content = await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
-          await cache.set(url, content);
-        }
-      } else {
-        await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
+      if (!currentRoute) {
+        return next();
       }
-    } catch (error) {
-      throw error;
+
+      try {
+        if (cache && route.isCached(currentRoute)) {
+          let content = await cache.get(url);
+
+          if (content) {
+            render.renderCacheContent(ctx, next, content);
+          } else {
+            content = await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
+            await cache.set(url, content);
+          }
+        } else {
+          await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
+        }
+      } catch (error) {
+        throw error;
+      }
+    } else {
+      await render.renderContent(ctx, next, plugins, firstPartOfHomePageContent, lastPartOfHomePageContent);
     }
   };
 
