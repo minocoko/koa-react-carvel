@@ -19,7 +19,7 @@ Base on project create by create-react-app & react-router-dom
 * Install packages
     ```bash
     yarn add react-carvel react react-dom react-router-dom \
-    koa koa-router koa-static
+    koa koa-router koa-static pm2
     ```
 
 * Update index.js
@@ -28,7 +28,7 @@ Base on project create by create-react-app & react-router-dom
     ```javascript
     import React from 'react';
     import ReactDOM from 'react-dom';
-    import Root from './root-client';
+    import Root from './App';
     import * as serviceWorker from './serviceWorker';
 
     const rootElement = document.getElementById('root');
@@ -46,14 +46,71 @@ Base on project create by create-react-app & react-router-dom
 
 * Create server & use react-carvel middleware
 
-    TBD
+    server/index.js
+    ```javascript
+    import path from 'path';
+    import Koa from 'koa';
+    import serve from 'koa-static';
+    import Router from 'koa-router';
+    import carvel, { StreamRender } from 'react-carvel';
 
-* create build config & script
+    import Root from '../src/App';
 
-    TBD
+    const ssrConfig = {
+        buildPath: path.resolve('./build'),
+        rootElementId: 'root',
+        render: new StreamRender({
+            root: Root
+        })
+    }
+    const router = new Router();
+    router.get('/', carvel(ssrConfig));
+
+    const app = new Koa();
+
+    app.use(router.routes());
+    app.use(router.allowedMethods());
+    app.use(serve(ssrConfig.buildPath));
+
+    const port = parseInt(process.env.PORT, 10) || 4000;
+    app.listen(port, () => {
+        console.log(`Server has started at ${port}`);
+    });
+
+    ```
+
+* update config & add build script
+
+    add new path to config/paths.js
+    ```javascript
+    appSsrBuild: resolveApp('build-server'),
+    appSsrIndexJs: resolveModule(resolveApp, 'server/index'),
+    appSsr: resolveApp('server'),
+    ```
+
+    add new script to package.json
+    ```javascript
+    "watch:server": "node scripts/watch-server.js",
+    "start:server": "pm2 start --no-daemon config/pm2.server.dev.config.js",
+    "build:server": "node scripts/build-server.js",
+    "server": "pm2 start config/pm2.server.prod.config.js",
+    ```
+
+    add new building files<br>
+    add [config/pm2.server.dev.config.js](examples/simple/config/pm2.server.dev.config.js) <br>
+    add [config/pm2.server.prod.config.js](examples/simple/config/pm2.server.prod.config.js) <br>
+    add [config/webpack.config.server.js](examples/simple/config/webpack.config.server.js) <br>
+    add [scripts/build-server.js](examples/simple/scripts/build-server.js) <br>
+    add [scripts/watch-server.js](examples/simple/scripts/watch-server.js) <br>
+    
 
 * Start server & checking
 
+    ```bash
+    npm run build
+    npm run build:server
+    npm run server
+    ```
     now ssr is working
 
 ## options

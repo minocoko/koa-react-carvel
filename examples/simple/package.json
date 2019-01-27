@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "pm2": "^3.2.9",
+    "react": "^16.7.0",
+    "react-carvel": "^0.1.9",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
     "@babel/core": "7.1.6",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
@@ -39,10 +49,8 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.3.1",
     "postcss-safe-parser": "4.0.1",
-    "react": "^16.7.0",
     "react-app-polyfill": "^0.2.0",
     "react-dev-utils": "^7.0.1",
-    "react-dom": "^16.7.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
@@ -54,6 +62,10 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
+    "watch:server": "node scripts/watch-server.js",
+    "start:server": "pm2 start --no-daemon config/pm2.server.dev.config.js",
+    "build:server": "node scripts/build-server.js",
+    "server": "pm2 start config/pm2.server.prod.config.js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
