@@ -115,7 +115,11 @@ Base on project create by create-react-app & react-router-dom
 
 ## options
 
-TBD
+|   name            |   require     |   description                     |
+|   -----------     |   ----------- |   -----------                     |
+|   buildPath       |   true        |   path of client build            |
+|   rootElementId   |   true        |   root react element of client    |
+|   render          |   true        |   render instance                 |
 
 ## License
 
