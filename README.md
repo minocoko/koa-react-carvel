@@ -1,4 +1,4 @@
-# react-carvel
+# koa-react-carvel
 A painless react server side rendering middleware
 
 ## Features
@@ -18,7 +18,7 @@ Base on project create by create-react-app & react-router-dom
 
 * Install packages
     ```bash
-    yarn add react-carvel react react-dom react-router-dom \
+    yarn add koa-react-carvel react react-dom react-router-dom \
     koa koa-router koa-static pm2
     ```
 
@@ -44,7 +44,7 @@ Base on project create by create-react-app & react-router-dom
 
     ```
 
-* Create server & use react-carvel middleware
+* Create server & use koa-react-carvel middleware
 
     server/index.js
     ```javascript
@@ -52,7 +52,7 @@ Base on project create by create-react-app & react-router-dom
     import Koa from 'koa';
     import serve from 'koa-static';
     import Router from 'koa-router';
-    import carvel, { StreamRender } from 'react-carvel';
+    import carvel, { StreamRender } from 'koa-react-carvel';
 
     import Root from '../src/App';
 
