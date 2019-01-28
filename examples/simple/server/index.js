@@ -2,7 +2,7 @@ import path from 'path';
 import Koa from 'koa';
 import serve from 'koa-static';
 import Router from 'koa-router';
-import carvel, { StreamRender } from 'react-carvel';
+import carvel, { StreamRender } from 'koa-react-carvel';
 
 import Root from '../src/App';
 

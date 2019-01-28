@@ -6243,6 +6243,18 @@ koa-is-json@^1.0.0:
   resolved "https://registry.yarnpkg.com/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
   integrity sha1-JzwH7c3Ljfaiwat9We52SRRR7BQ=
 
+koa-react-carvel@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/koa-react-carvel/-/koa-react-carvel-0.1.10.tgz#f2b67cd1a3de7d7dd3056abd76fb3a5fffed0726"
+  integrity sha512-DqPMjpMaufX3rA5FL5rhNRItFL6tfTp6UNwiDibG9pkPe3diz/zZmWaYYwQxebuZOKGJQopxiGIdF4Clgxg62A==
+  dependencies:
+    hiredis "^0.5.0"
+    react "^16.7.0"
+    react-dom "^16.7.0"
+    react-router-dom "^4.3.1"
+    redis "^2.8.0"
+    styled-components "^4.1.3"
+
 koa-router@^7.4.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/koa-router/-/koa-router-7.4.0.tgz#aee1f7adc02d5cb31d7d67465c9eacc825e8c5e0"
@@ -8684,18 +8696,6 @@ react-app-polyfill@^0.2.0:
     promise "8.0.2"
     raf "3.4.0"
     whatwg-fetch "3.0.0"
-
-react-carvel@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/react-carvel/-/react-carvel-0.1.9.tgz#5ce7c3a4d32af62785a318dbd30e17ab7aa8047a"
-  integrity sha512-58CSVRqzKDeCD2pLiPUmPvc+qGf4knH9miwkZ0zHMFj5QAhWJB7kGy3LrLbAG35A/l+5pRUeaCwkn399Q30PoA==
-  dependencies:
-    hiredis "^0.5.0"
-    react "^16.7.0"
-    react-dom "^16.7.0"
-    react-router-dom "^4.3.1"
-    redis "^2.8.0"
-    styled-components "^4.1.3"
 
 react-dev-utils@^7.0.1:
   version "7.0.1"
