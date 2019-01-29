@@ -18,7 +18,7 @@
 
 A painless react server side rendering koa middleware
 
-## Features
+### Features
 * Stream & string mode rendering
 * Gzip compression on stream & string rendering
 * Rendering cache
@@ -27,7 +27,7 @@ A painless react server side rendering koa middleware
 * Only few change when apply to exists or new react project
 * use exists client routing
 
-## Usage
+### Usage
 
 Base on project create by create-react-app & react-router-dom
 
@@ -128,7 +128,7 @@ Base on project create by create-react-app & react-router-dom
     ```
     now ssr is working
 
-## options
+### options
 
 |   name            |   require     |   type        |   description                                                                     |
 |   -----------     |   ----------- |   ----------- |   -----------                                                                     |
@@ -140,6 +140,10 @@ Base on project create by create-react-app & react-router-dom
 |   plugins         |   false       |   array       |   render plugins. currently only support stringStyledComponentsPlugin or streamStyledComponentsPlugin |
 
 
-## License
+### Examples
+
+* [simple](examples/simple)
+
+### License
 
 MIT © [Minocoko](mailto:minocoko@outlook.com)
