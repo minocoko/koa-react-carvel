@@ -1,4 +1,21 @@
 # koa-react-carvel
+[![Build][travis-img]][travis]
+[![Downloads][koa-react-carvel-dt-img]][koa-react-carvel-pkg]
+[![Version][koa-react-carvel-v-img]][koa-react-carvel-pkg]
+[![Dependency][dependency-img]][dependency]
+[![DevDependency][devDependency-img]][dependency]
+
+[travis-img]: https://travis-ci.org/minocoko/koa-react-carvel.svg
+[travis]: https://travis-ci.org/minocoko/koa-react-carvel
+[coveralls-img]: https://coveralls.io/repos/github/minocoko/koa-react-carvel/badge.svg
+[coveralls]: https://coveralls.io/github/minocoko/koa-react-carvel
+[koa-react-carvel-pkg]: https://www.npmjs.com/package/koa-react-carvel
+[koa-react-carvel-dt-img]: https://img.shields.io/npm/dt/koa-react-carvel.svg
+[koa-react-carvel-v-img]: https://img.shields.io/npm/v/koa-react-carvel.svg
+[dependency]: https://david-dm.org/minocoko/koa-react-carvel
+[dependency-img]: https://david-dm.org/minocoko/koa-react-carvel/status.svg
+[devDependency-img]: https://david-dm.org/minocoko/koa-react-carvel/dev-status.svg
+
 A painless react server side rendering koa middleware
 
 ## Features
@@ -113,11 +130,15 @@ Base on project create by create-react-app & react-router-dom
 
 ## options
 
-|   name            |   require     |   description                     |
-|   -----------     |   ----------- |   -----------                     |
-|   buildPath       |   true        |   path of client build            |
-|   rootElementId   |   true        |   root react element of client    |
-|   render          |   true        |   render instance                 |
+|   name            |   require     |   type        |   description                                                                     |
+|   -----------     |   ----------- |   ----------- |   -----------                                                                     |
+|   buildPath       |   true        |   string      |   path of client build                                                            |
+|   rootElementId   |   true        |   string      |   root react element of client                                                    |
+|   render          |   true        |   object      |   render instance. can initialize from StringRender or StreamRender               |
+|   cache           |   false       |   object      |   cache instance, can initialize from MemoryCacheProvider or RedisCacheProvider   |
+|   template        |   false       |   string      |   html templae path,default value is 'index.html                                  |
+|   plugins         |   false       |   array       |   render plugins. currently only support stringStyledComponentsPlugin or streamStyledComponentsPlugin |
+
 
 ## License
 
