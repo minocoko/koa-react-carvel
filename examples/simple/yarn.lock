@@ -6243,10 +6243,10 @@ koa-is-json@^1.0.0:
   resolved "https://registry.yarnpkg.com/koa-is-json/-/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
   integrity sha1-JzwH7c3Ljfaiwat9We52SRRR7BQ=
 
-koa-react-carvel@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/koa-react-carvel/-/koa-react-carvel-0.1.10.tgz#f2b67cd1a3de7d7dd3056abd76fb3a5fffed0726"
-  integrity sha512-DqPMjpMaufX3rA5FL5rhNRItFL6tfTp6UNwiDibG9pkPe3diz/zZmWaYYwQxebuZOKGJQopxiGIdF4Clgxg62A==
+koa-react-carvel@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/koa-react-carvel/-/koa-react-carvel-0.1.12.tgz#030f04f3a7e843e99475d97b90b3246332b720b2"
+  integrity sha512-fsYxpS7nUfKi2LwWsKQnhU55SnXtKqkx+ynk/tQbHOLNtTKBFg19kEIR3MHPTwI2qN5mmLaZmgKdFuHFawPG1w==
   dependencies:
     hiredis "^0.5.0"
     react "^16.7.0"
